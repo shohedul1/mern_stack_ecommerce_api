@@ -1,18 +1,18 @@
-import  express from "express";
-import cors  from "cors"
+import express from "express";
+import cors from "cors"
 import mongoose from "mongoose";
-import dotenv  from "dotenv";
-import userRoute  from "./route/userRoute.js";
-import productRoute  from "./route/productRoute.js"
+import dotenv from "dotenv";
+import userRoute from "./route/userRoute.js";
+import productRoute from "./route/productRoute.js"
 
 // const Stripe = require('stripe')
 
 const app = express();
 dotenv.config();
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: "10mb" }));
 
-const PORT = process.env.PORT 
+const PORT = process.env.PORT
 
 //mongodb connection
 mongoose
